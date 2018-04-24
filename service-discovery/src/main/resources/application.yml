@@ -1,0 +1,15 @@
+server:
+  port: 9999
+
+# registry name in eureka server, unique
+# spring.application.name=service-discovery
+
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    register-with-eureka: false # will not be the client
+    fetch-registry: false       # no need to register itself
+  serviceUrl:
+    defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+

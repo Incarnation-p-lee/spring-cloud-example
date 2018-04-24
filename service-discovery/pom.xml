@@ -18,7 +18,7 @@
         <!-- Spring Cloud Starter Eureka Server -->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-netflix-eureka-server</artifactId>
+            <artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>
         </dependency>
 
         <!-- Spring Cloud Starter Config -->

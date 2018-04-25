@@ -23,6 +23,7 @@
     <modules>
         <module>service-discovery</module>
         <module>web-application</module>
+        <module>web-application-backup</module>
     </modules>
 
     <dependencyManagement>

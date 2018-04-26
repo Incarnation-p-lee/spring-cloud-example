@@ -24,6 +24,7 @@
         <module>service-discovery</module>
         <module>web-application</module>
         <module>web-application-backup</module>
+        <module>ribbon-consumer</module>
     </modules>
 
     <dependencyManagement>

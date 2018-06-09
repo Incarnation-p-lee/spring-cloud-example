@@ -15,3 +15,6 @@ sleep 20
 java -jar ribbon-consumer/target/ribbon-consumer-1.0-SNAPSHOT.jar --server.port=8003 &
 sleep 20
 
+java -jar hystrix-dashboard/target/hystrix-dashboard-1.0-SNAPSHOT.jar --server.port=8004 &
+sleep 20
+

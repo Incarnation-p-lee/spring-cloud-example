@@ -6,8 +6,7 @@ import org.springframework.cloud.client.loadbalancer.LoadBalanced;
 import org.springframework.context.annotation.Bean;
 import org.springframework.web.client.RestTemplate;
 
-// equals @EnableDiscoveryClient @SpringBootApplication @EnableCircuitBreaker
-@SpringCloudApplication
+@SpringCloudApplication // equals @EnableDiscoveryClient @SpringBootApplication @EnableCircuitBreaker
 public class RibbonConsumerApplication {
 
     @Bean

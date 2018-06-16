@@ -15,12 +15,6 @@
     <packaging>jar</packaging>
 
     <dependencies>
-        <!-- Spring Cloud Starter Eureka Client -->
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
-        </dependency>
-
         <!-- Spring Cloud Starter Hystrix -->
         <dependency>
             <groupId>org.springframework.cloud</groupId>

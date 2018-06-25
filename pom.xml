@@ -27,7 +27,6 @@
         <module>web-application-backup</module>
         <module>ribbon-consumer</module>
         <module>hystrix-dashboard</module>
-        <module>turbine</module>
     </modules>
 
     <dependencyManagement>

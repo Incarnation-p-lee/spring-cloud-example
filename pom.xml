@@ -27,6 +27,7 @@
         <module>web-application-backup</module>
         <module>ribbon-consumer</module>
         <module>hystrix-dashboard</module>
+        <module>feign-consumer</module>
     </modules>
 
     <dependencyManagement>

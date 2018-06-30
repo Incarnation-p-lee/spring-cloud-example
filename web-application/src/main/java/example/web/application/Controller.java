@@ -1,17 +1,14 @@
 package example.web.application;
 
 import lombok.SneakyThrows;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.Random;
-import java.util.logging.Logger;
 
 @RestController
+@Slf4j
 public class Controller {
-
-    private final Logger LOG = Logger.getLogger(this.getClass().getName());
 
     @SneakyThrows
     @RequestMapping(value = "/hello", method = RequestMethod.GET)
@@ -19,10 +16,25 @@ public class Controller {
 
         final int during = new Random().nextInt(3000);
 
-        LOG.info("Hello Service will last:" + during + "ms");
+        log.info("Hello Service will last:" + during + "ms");
 
         Thread.sleep(during);
 
-        return "Say Hello to Service!";
+        return "Say Hello to Service";
+    }
+
+    @RequestMapping(value = "/hello-String", method = RequestMethod.GET)
+    public String helloService(@RequestParam String name) {
+        return String.format("Say Hello to %s", name);
+    }
+
+    @RequestMapping(value = "/hello-User", method = RequestMethod.GET)
+    public User helloService(@RequestHeader String name, @RequestHeader Integer age) {
+        return new User(name, age);
+    }
+
+    @RequestMapping(value = "/hello-User", method = RequestMethod.POST)
+    public String helloService(@RequestBody User user) {
+        return String.format("Say Hello to  %s", user.toString());
     }
 }

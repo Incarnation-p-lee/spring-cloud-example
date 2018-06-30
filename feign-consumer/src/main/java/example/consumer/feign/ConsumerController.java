@@ -15,4 +15,17 @@ public class ConsumerController {
     public String sayHello() {
         return this.helloService.sayHello();
     }
+
+    @RequestMapping(value = "/consumer-user", method = RequestMethod.GET)
+    public String sayHelloUser() {
+        final StringBuilder builder = new StringBuilder();
+        final String separator = "----";
+
+        builder.append(this.helloService.sayHello()).append(separator);
+        builder.append(this.helloService.sayHello("incarnation")).append(separator);
+        builder.append(this.helloService.sayHello("siqili", 1)).append(separator);
+        builder.append(this.helloService.sayHello(new User("panli", 31)));
+
+        return builder.toString();
+    }
 }

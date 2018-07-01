@@ -1,4 +1,4 @@
-package example.consumer.ribbon;
+package example.ribbon.consumer;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.cloud.client.SpringCloudApplication;

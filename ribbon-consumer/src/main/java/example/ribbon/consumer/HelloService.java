@@ -1,4 +1,4 @@
-package example.consumer.ribbon;
+package example.ribbon.consumer;
 
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import lombok.NoArgsConstructor;
@@ -8,7 +8,7 @@ import org.springframework.web.client.RestTemplate;
 @NoArgsConstructor
 public class HelloService {
 
-    private final String serviceUrl = "http://HELLO-SERVICE/hello";
+    private final String serviceUrl = "http://HELLO-SERVICE/refactor/hello";
 
     @Autowired
     private RestTemplate template;

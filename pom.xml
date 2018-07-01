@@ -22,6 +22,7 @@
     </properties>
 
     <modules>
+        <module>hello-service-api</module>
         <module>service-discovery</module>
         <module>web-application</module>
         <module>web-application-backup</module>

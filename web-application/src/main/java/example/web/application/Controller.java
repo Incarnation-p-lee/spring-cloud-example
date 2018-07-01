@@ -1,5 +1,7 @@
 package example.web.application;
 
+import example.hello.service.api.HelloService;
+import example.hello.service.api.User;
 import lombok.SneakyThrows;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.*;
@@ -8,11 +10,11 @@ import java.util.Random;
 
 @RestController
 @Slf4j
-public class Controller {
+public class Controller implements HelloService {
 
+    @Override
     @SneakyThrows
-    @RequestMapping(value = "/hello", method = RequestMethod.GET)
-    public String helloService() {
+    public String sayHello() {
 
         final int during = new Random().nextInt(3000);
 
@@ -23,18 +25,18 @@ public class Controller {
         return "Say Hello to Service";
     }
 
-    @RequestMapping(value = "/hello-String", method = RequestMethod.GET)
-    public String helloService(@RequestParam String name) {
+    @Override
+    public String sayHello(@RequestParam String name) {
         return String.format("Say Hello to %s", name);
     }
 
-    @RequestMapping(value = "/hello-User", method = RequestMethod.GET)
-    public User helloService(@RequestHeader String name, @RequestHeader Integer age) {
+    @Override
+    public User sayHello(@RequestHeader String name, @RequestHeader Integer age) {
         return new User(name, age);
     }
 
-    @RequestMapping(value = "/hello-User", method = RequestMethod.POST)
-    public String helloService(@RequestBody User user) {
+    @Override
+    public String sayHello(@RequestBody User user) {
         return String.format("Say Hello to  %s", user.toString());
     }
 }

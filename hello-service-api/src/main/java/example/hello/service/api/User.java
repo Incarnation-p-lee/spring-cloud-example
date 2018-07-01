@@ -1,4 +1,4 @@
-package example.consumer.feign;
+package example.hello.service.api;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

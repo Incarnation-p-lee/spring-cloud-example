@@ -1,12 +1,11 @@
-package example.consumer.feign;
+package example.hello.service.api;
 
-import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.*;
 
-@FeignClient("HELLO-SERVICE")
+@RequestMapping("/refactor")
 public interface HelloService {
 
-    @RequestMapping("/hello")
+    @RequestMapping(value = "/hello", method = RequestMethod.GET)
     String sayHello();
 
     @RequestMapping(value = "/hello-String", method = RequestMethod.GET)

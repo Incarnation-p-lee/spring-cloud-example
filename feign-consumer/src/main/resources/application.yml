@@ -13,3 +13,22 @@ eureka:
 feign:
   hystrix:
     enabled: true
+
+hystrix:
+  command:
+    default:
+      execution:
+          isolation:
+            thread:
+              timeoutInMilliseconds: 4000
+
+HELLO-SERVICE: # name from @FeignClient
+  ribbon:
+#    ConnectTimeout: 500
+    ReadTimeout: 1000
+    OkToRetryOnAllOperations: true
+    MaxAutoRetriesNextServer: 2
+    MaxAutoRetries: 1
+
+# hystrix time limitation will trigger fallback after timeout.
+# ribbon config will retry read until the response time not reach the ReadTimeout.

@@ -29,6 +29,7 @@
         <module>ribbon-consumer</module>
         <module>hystrix-dashboard</module>
         <module>feign-consumer</module>
+        <module>zuul-gateway</module>
     </modules>
 
     <dependencyManagement>

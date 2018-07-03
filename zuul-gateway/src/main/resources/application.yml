@@ -1,0 +1,22 @@
+server:
+  port: 8006
+
+spring:
+  application:
+    name: zuul-gateway
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:9999/eureka/
+
+zuul:
+  routes:
+    api-a:
+      path: /hello-service/**
+    api-a:
+      serviceId: hello-service
+    api-b:
+      path: /feign-consumer/**
+    api-b:
+      serviceId: feign-consumer

@@ -13,10 +13,14 @@ eureka:
 zuul:
   routes:
     api-a:
-      path: /hello-service/**
-    api-a:
-      serviceId: hello-service
-    api-b:
       path: /feign-consumer/**
-    api-b:
+    api-a:
       serviceId: feign-consumer
+    api-b:
+      path: /ribbin-consumer/**
+    api-b:
+      serviceId: ribbin-consumer
+    api-c:
+      path: /hystrix-dashboard/**
+    api-c:
+      serviceId: hystrix-dashboard

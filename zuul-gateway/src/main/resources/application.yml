@@ -24,3 +24,7 @@ zuul:
       path: /hystrix-dashboard/**
     api-c:
       serviceId: hystrix-dashboard
+
+zuul:
+  ignored-services:
+    - hello-service

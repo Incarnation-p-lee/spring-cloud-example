@@ -1,0 +1,11 @@
+spring:
+  application:
+    name: feign-consumer
+
+spring:
+  cloud:
+    config:
+      uri: http://localhost:8888
+      label: master
+      name: feign-consumer
+      fail-fast: true

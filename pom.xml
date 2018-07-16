@@ -30,6 +30,7 @@
         <module>hystrix-dashboard</module>
         <module>feign-consumer</module>
         <module>zuul-gateway</module>
+        <module>rabbitmq-message</module>
     </modules>
 
     <dependencyManagement>

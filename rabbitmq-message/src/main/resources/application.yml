@@ -1,0 +1,12 @@
+spring:
+  application:
+    name: rabbitmq-message
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: panli
+    password: 666666
+
+server:
+  port: 9876
+

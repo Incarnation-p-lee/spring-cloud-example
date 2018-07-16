@@ -8,7 +8,7 @@ import org.springframework.web.client.RestTemplate;
 @NoArgsConstructor
 public class HelloService {
 
-    private final String serviceUrl = "http://HELLO-SERVICE/refactor/hello";
+    private final String serviceUrl = "http://HELLO-SERVICE/hello";
 
     @Autowired
     private RestTemplate template;

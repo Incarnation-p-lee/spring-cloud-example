@@ -1,0 +1,11 @@
+spring:
+  application:
+    name: hello-service
+
+spring:
+  cloud:
+    config:
+      uri: http://localhost:8888
+      label: master
+      name: web-application
+      fail-fast: true

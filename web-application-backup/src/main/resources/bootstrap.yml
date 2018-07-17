@@ -1,11 +1,15 @@
 spring:
   application:
-    name: hello-service-backup
-
-spring:
+    name: web-application-backup
   cloud:
     config:
-      uri: http://localhost:8888
       label: master
-      name: web-application-backup
       fail-fast: true
+      discovery:
+        enabled: true
+        service-id: config-server
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:9999/eureka/

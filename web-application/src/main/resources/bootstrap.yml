@@ -1,11 +1,31 @@
 spring:
   application:
-    name: hello-service
-
-spring:
+    name: web-application
   cloud:
     config:
-      uri: http://localhost:8888
       label: master
-      name: web-application
       fail-fast: true
+      discovery:
+        enabled: true
+        service-id: config-server
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: panli
+    password: 666666
+
+#  cloud:
+#    config:
+#      label: master
+#      fail-fast: true
+#      uri: http://localhost:8888
+#      name: web-application
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:9999/eureka/
+
+#management:
+#  security:
+#    enabled: false

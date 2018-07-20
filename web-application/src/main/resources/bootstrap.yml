@@ -8,12 +8,27 @@ spring:
       discovery:
         enabled: true
         service-id: config-server
+    bus:
+      enabled: true
   rabbitmq:
     host: localhost
     port: 5672
     username: panli
     password: 666666
 
+management:
+  endpoints:
+    web:
+      exposure:
+        include:
+          - bus-refresh
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:9999/eureka/
+
+# If the config server has no connection to eureka server.
 #  cloud:
 #    config:
 #      label: master
@@ -21,11 +36,3 @@ spring:
 #      uri: http://localhost:8888
 #      name: web-application
 
-eureka:
-  client:
-    serviceUrl:
-      defaultZone: http://localhost:9999/eureka/
-
-#management:
-#  security:
-#    enabled: false

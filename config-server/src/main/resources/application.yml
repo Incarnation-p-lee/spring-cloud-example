@@ -12,11 +12,13 @@ spring:
           searchPaths: micro-service-config
           username:
           password:
-
+        monitor:
+          github:
+            enabled: true
     bus:
       trace:
         enabled: true
-
+      enabled: true
   rabbitmq:
     host: localhost
     port: 5672
@@ -24,8 +26,11 @@ spring:
     password: 666666
 
 management:
-  security:
-    enabled: false
+  endpoints:
+    web:
+      exposure:
+        include:
+          - bus-refresh
 
 eureka:
   client:

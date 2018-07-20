@@ -6,9 +6,9 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 
 @EnableDiscoveryClient
 @SpringBootApplication
-public class WebApplicationBackup {
+public class WebBackupApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(WebApplicationBackup.class, args);
+        SpringApplication.run(WebBackupApplication.class, args);
     }
 }

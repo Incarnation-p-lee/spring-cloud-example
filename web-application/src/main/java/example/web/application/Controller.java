@@ -27,11 +27,11 @@ public class Controller implements HelloService {
 
         final int during = new Random().nextInt(3000);
 
-        log.info("Hello Service will last:" + during + "ms");
+        log.info(String.format("Hello Service will last: %s ms.", during));
 
         Thread.sleep(during);
 
-        return "Say Hello to Service --- " + serviceVersion;
+        return String.format("Hello Service %s greetings", serviceVersion);
     }
 
     @Override
@@ -46,6 +46,6 @@ public class Controller implements HelloService {
 
     @Override
     public String sayHello(@RequestBody User user) {
-        return String.format("Say Hello to  %s", user.toString());
+        return String.format("Say Hello to %s", user.toString());
     }
 }

@@ -8,8 +8,6 @@ spring:
       discovery:
         enabled: true
         service-id: config-server
-    bus:
-      enabled: true
   rabbitmq:
     host: localhost
     port: 5672

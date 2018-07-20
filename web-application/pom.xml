@@ -45,11 +45,12 @@
             <artifactId>spring-cloud-starter-bus-amqp</artifactId>
         </dependency>
 
+        <!-- Hello Service API interface -->
         <dependency>
             <groupId>spring-cloud-example</groupId>
             <artifactId>hello-service-api</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
-    </dependencies>
 
+    </dependencies>
 </project>

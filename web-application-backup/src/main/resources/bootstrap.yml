@@ -8,6 +8,18 @@ spring:
       discovery:
         enabled: true
         service-id: config-server
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: panli
+    password: 666666
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include:
+          - bus-refresh
 
 eureka:
   client:

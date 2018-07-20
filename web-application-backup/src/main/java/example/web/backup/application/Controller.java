@@ -3,8 +3,10 @@ package example.web.backup.application;
 import example.hello.service.api.HelloService;
 import example.hello.service.api.User;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.web.bind.annotation.*;
 
+@RefreshScope
 @RestController
 public class Controller implements HelloService {
 

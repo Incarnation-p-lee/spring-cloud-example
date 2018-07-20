@@ -15,11 +15,6 @@ public class RibbonConsumerApplication {
         return new RestTemplate();
     }
 
-    @Bean
-    public HelloService helloService() {
-        return new HelloService();
-    }
-
     public static void main(String[] args) {
         SpringApplication.run(RibbonConsumerApplication.class, args);
     }

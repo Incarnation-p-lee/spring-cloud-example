@@ -2,19 +2,25 @@ package example.feign.consumer;
 
 import example.hello.service.api.User;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+@RefreshScope
 @RestController
 public class ConsumerController {
+
+    @Value("${consumer.version")
+    private String version;
 
     @Autowired
     private FeignHelloService service;
 
     @RequestMapping(value = "/consumer", method = RequestMethod.GET)
     public String sayHello() {
-        return this.service.sayHello();
+        return String.format("%s of %s", this.service.sayHello(), this.version);
     }
 
     @RequestMapping(value = "/consumer-user", method = RequestMethod.GET)

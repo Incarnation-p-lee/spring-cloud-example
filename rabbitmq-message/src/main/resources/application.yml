@@ -10,3 +10,6 @@ spring:
 server:
   port: 9876
 
+# To enable RabbitMQ plugin management with localhost:15672
+#   - .\rabbitmq-plugins.bat enable rabbitmq_management
+

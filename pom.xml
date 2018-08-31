@@ -32,7 +32,8 @@
         <module>zuul-gateway</module>
         <module>rabbitmq-message</module>
         <module>config-server</module>
-        <module>stream-integration</module>
+        <module>stream-integration-receiver</module>
+        <module>stream-integration-sender</module>
     </modules>
 
     <dependencyManagement>

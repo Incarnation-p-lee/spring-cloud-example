@@ -1,0 +1,45 @@
+spring:
+  application:
+    name: stream-integration-receiver
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: panli
+    password: 666666
+  cloud:
+    stream:
+      bindings:
+        input:
+          destination: input-dest
+          contentType: text/plain
+          group: input-group
+
+server:
+  port: 8972
+
+#
+# Stream Concept:   RabbitMQ    Kafka
+#        Topic      Exchange    Topic
+#
+# For RabbitMQ: when connection to channel
+#     Channel -> Binder -> Rabbit-Queue -> Rabbit-Exchange
+#
+# Consumer group:
+#     FOR one microService with more than one instance.
+#
+#     WITH bindings.input.group=xxx, all instance will share the message of this group
+#
+#     QUEUE name compose of ${destination.group}.
+#
+#     BY default RabbitMQ will create the exchange with the name of destination.
+#
+# Consumer partition:
+#     FOR one microService with more than onc instance, and consume messages with specific
+#     instance of group.
+#
+#     MESSAGE produce can add ID-like information to message itself. Keep the consumer
+#     consume all the message with the same ID.
+#
+#     CLOUD Stream provide generic abstract implementation for partition.
+#
+

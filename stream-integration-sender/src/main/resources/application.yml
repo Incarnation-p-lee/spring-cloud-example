@@ -1,0 +1,28 @@
+spring:
+  application:
+    name: stream-integration-sender
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: panli
+    password: 666666
+  cloud:
+    stream:
+      bindings:
+        output:
+          destination: input-dest
+          contentType: text/plain
+          group: input-group
+        orderInput:
+          destination: order
+          contentType: text/plain
+          group: order-group
+        orderOutput:
+          destination: order
+          contentType: text/plain
+          group: order-group
+
+server:
+  port: 8982
+
+

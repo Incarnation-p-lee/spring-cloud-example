@@ -50,10 +50,6 @@ public class Controller implements HelloService {
 
     public static String maker = null;
 
-    public String tracker;
-
-
-
     @Override
     @SneakyThrows
     public String sayHello() {

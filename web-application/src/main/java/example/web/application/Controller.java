@@ -2,6 +2,7 @@ package example.web.application;
 
 import example.hello.service.api.HelloService;
 import example.hello.service.api.User;
+import lombok.NonNull;
 import lombok.SneakyThrows;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
@@ -21,9 +22,38 @@ public class Controller implements HelloService {
     @Value("${version}")
     private String serviceVersion;
 
+    private String tempVersion = "2.0.0.RELEASE";
+
+
+    @SneakyThrows
+    private String sayHelloWithName(@NonNull String name) {
+        int a = 0;
+
+        Long b = Long.valueOf(a);
+
+        final int during = new Random().nextInt(3000);
+        log.info(String.format("Hello Service will last: %s ms.", during));
+        Thread.sleep(during);
+        return String.format("Hello Service %s greetings", serviceVersion);
+    }
+
+    private String say(@NonNull String name) {
+        int a = 0;
+
+        Long b = Long.valueOf(a);
+
+        final int during = new Random().nextInt(3000);
+        return String.format("Hello Service %s greetings", serviceVersion);
+    }
+
+
+
+    public static String maker = null;
+
     @Override
     @SneakyThrows
     public String sayHello() {
+        String name = "test-PR";
 
         final int during = new Random().nextInt(3000);
 
